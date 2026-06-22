@@ -1,0 +1,158 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "@stylistic/stylelint-config"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "@stylistic/stylelint-plugin"
+  ],
+  "ignoreFiles": [
+    "**/dist/**/*",
+    "**/node_modules/**/*"
+  ],
+  "rules": {
+    "selector-class-pattern": null,
+    "declaration-block-no-duplicate-properties": [
+      true,
+      {
+        "ignore": [
+          "consecutive-duplicates"
+        ]
+      }
+    ],
+    "block-no-empty": null,
+    "color-named": "never",
+    "function-url-quotes": "always",
+    "@stylistic/indentation": [
+      2,
+      {
+        "baseIndentLevel": 0
+      }
+    ],
+    "no-empty-source": null,
+    "@stylistic/string-quotes": "double",
+    "@stylistic/max-empty-lines": 1,
+    "value-keyword-case": null,
+    "declaration-property-value-disallowed-list": {
+      "justify-content": [
+        "start",
+        "end"
+      ],
+      "align-content": [
+        "start",
+        "end"
+      ],
+      "align-items": [
+        "start",
+        "end"
+      ],
+      "align-self": [
+        "start",
+        "end"
+      ]
+    },
+    "order/properties-order": [
+      [
+        "all",
+        "content",
+        "position",
+        "left",
+        "right",
+        "top",
+        "bottom",
+        "z-index",
+        "display",
+        "align-content",
+        "align-items",
+        "align-self",
+        "flex",
+        "flex-grow",
+        "flex-shrink",
+        "flex-basis",
+        "flex-flow",
+        "flex-direction",
+        "flex-wrap",
+        "justify-content",
+        "order",
+        "float",
+        "clear",
+        "overflow",
+        "overflow-x",
+        "overflow-y",
+        "margin",
+        "margin-top",
+        "margin-right",
+        "margin-bottom",
+        "margin-left",
+        "outline",
+        "border",
+        "border-style",
+        "border-width",
+        "border-color",
+        "border-top",
+        "border-right",
+        "border-right-style",
+        "border-right-width",
+        "border-right-color",
+        "border-bottom",
+        "border-left",
+        "border-radius",
+        "border-collapse",
+        "padding",
+        "padding-top",
+        "padding-right",
+        "padding-bottom",
+        "padding-left",
+        "width",
+        "height",
+        "min-width",
+        "min-height",
+        "max-width",
+        "max-height",
+        "box-sizing",
+        "box-shadow",
+        "font",
+        "font-family",
+        "font-weight",
+        "font-style",
+        "font-size",
+        "line-height",
+        "letter-spacing",
+        "word-spacing",
+        "text-align",
+        "text-decoration",
+        "text-indent",
+        "text-overflow",
+        "text-shadow",
+        "text-transform",
+        "white-space",
+        "color",
+        "fill",
+        "background",
+        "background-image",
+        "background-position",
+        "background-size",
+        "background-repeat",
+        "background-color",
+        "opacity",
+        "visibility",
+        "cursor",
+        "pointer-events",
+        "user-select",
+        "filter",
+        "transform",
+        "transform-origin",
+        "transition",
+        "transition-property",
+        "transition-delay",
+        "transition-duration",
+        "transition-timing-function",
+        "animation"
+      ],
+      {
+        "unspecified": "bottomAlphabetical"
+      }
+    ]
+  }
+}
