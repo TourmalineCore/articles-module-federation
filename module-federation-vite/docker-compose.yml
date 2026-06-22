@@ -1,0 +1,26 @@
+services:
+  proxy:
+    image: nginx:alpine
+    ports:
+      - "30091:80"
+    volumes:
+      - ${LOCAL_WORKSPACE_FOLDER:-./}/nginx-proxy.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - layout
+      - host-a
+      - host-b
+
+  layout:
+    build: ./layout
+    expose:
+      - "80"
+
+  host-a:
+    build: ./host-a
+    expose:
+      - "80"
+
+  host-b:
+    build: ./host-b
+    expose:
+      - "80"
