@@ -1,0 +1,43 @@
+{
+  "name": "originjs",
+  "image": "cypress/included:cypress-15.17.0-node-24.17.0-chrome-149.0.7827.155-1-ff-152.0-edge-149.0.4022.69-1",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "moby": false
+    }
+  },
+  "runArgs": [
+    "--network=host"
+  ],
+  "forwardPorts": [
+    4000, 
+    4001, 
+    4002, 
+    30091
+  ],
+  "portsAttributes": {
+    "4000": { "label": "layout" },
+    "4001": { "label": "host-a" },
+    "4002": { "label": "host-b" },
+    "30091": { "label": "nginx proxy" }
+  },
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit",
+          "source.fixAll.stylelint": "explicit"
+        }
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint"
+      ]
+    }
+  }
+}
