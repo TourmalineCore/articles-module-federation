@@ -21,7 +21,7 @@ const ORIGIN = process.env.NODE_ENV === 'production'
 export default defineConfig({
   server: {
     port: HOST_PORT,
-    origin: ORIGIN, 
+    origin: ORIGIN,
   },
   base: '/host-b',
   plugins: [
