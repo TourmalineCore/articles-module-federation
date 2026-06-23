@@ -1,0 +1,15 @@
+{
+  "name": "originjs",
+  "private": true,
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:open:e2e": "cypress open --e2e --browser electron",
+    "cypress:run:e2e": "cypress run --e2e --browser electron",
+    "cypress:open:e2e:docker": "cypress open --e2e --browser electron --config-file cypress.config.docker.ts",
+    "cypress:run:e2e:docker": "cypress run --e2e --browser electron --config-file cypress.config.docker.ts"
+  },
+  "devDependencies": {
+    "cypress": "^13.17.0",
+    "typescript": "^5.9.3"
+  }
+}
