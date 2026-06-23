@@ -18,8 +18,11 @@ export default function Layout({
           <span className="header__logo">MF Demo</span>
         </header>
         <div className="body">
-          <aside className="sidebar">
-            <nav>
+          <aside
+            className="sidebar"
+            data-cy="sidebar"
+          >
+            <nav data-cy="sidebar-nav">
               <ul>
                 {navItems.map(({
                   label,
@@ -28,15 +31,29 @@ export default function Layout({
                 }) => (
                   <li key={path}>
                     {routes.some(route => route.path === path)
-                      ? <Link to={path}>{label}</Link>
-                      : <a href={`${origin}${path}`}>{label}</a>
+                      ? <Link
+                        to={path}
+                        data-cy={`nav-link-${label.toLowerCase()}`}
+                      >
+                        {label}
+                      </Link>
+                      : 
+                      <a
+                        href={`${origin}${path}`}
+                        data-cy={`nav-link-${label.toLowerCase()}`}
+                      >
+                        {label}
+                      </a>
                     }
                   </li>
                 ))}
               </ul>
             </nav>
           </aside>
-          <main className="content">
+          <main
+            className="content"
+            data-cy="page-content"
+          >
             <Routes>
               {routes.map(({
                 path,
