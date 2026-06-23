@@ -31,7 +31,8 @@ export default function Layout({
                 }) => (
                   <li key={path}>
                     {routes.some(route => route.path === path)
-                      ? <Link
+                      ? 
+                      <Link
                         to={path}
                         data-cy={`nav-link-${label.toLowerCase()}`}
                       >
