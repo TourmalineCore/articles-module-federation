@@ -10,15 +10,18 @@ on:
 jobs:
   cypress-e2e:
     runs-on: ubuntu-24.04
-    container:
-      image: cypress/browsers:node-24.17.0-chrome-149.0.7827.155-1-ff-152.0-edge-149.0.4022.69-1
-      options: --user 1001
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install Cypress dependencies
+        working-directory: ${{ inputs.working-directory }}
+        run: npm ci
 
       - name: Start Docker Compose
         working-directory: ${{ inputs.working-directory }}
@@ -33,6 +36,7 @@ jobs:
           wait-on: "http://localhost:30091"
           browser: chrome
           config-file: cypress.config.docker.ts
+          install: false
 
       - name: Stop Docker Compose
         if: always()
