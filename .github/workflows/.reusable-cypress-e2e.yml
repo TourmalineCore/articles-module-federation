@@ -33,7 +33,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           working-directory: ${{ inputs.working-directory }}
-          wait-on: "http://localhost:30091"
+          wait-on: "http://localhost:30091/host-a/"
           browser: chrome
           config-file: cypress.config.docker.ts
           install: false
