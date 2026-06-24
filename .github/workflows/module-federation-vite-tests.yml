@@ -1,0 +1,36 @@
+name: Module Federation Vite Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'module-federation-vite/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        app: [layout, host-a, host-b]
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        working-directory: module-federation-vite/${{ matrix.app }}
+        run: npm ci
+
+      - name: Lint
+        working-directory: module-federation-vite/${{ matrix.app }}
+        run: npm run lint
+
+  cypress-e2e:
+    needs: lint
+    uses: ./.github/workflows/.reusable-cypress-e2e.yml
+    with:
+      working-directory: module-federation-vite
