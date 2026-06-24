@@ -9,7 +9,7 @@
     "cypress:run:e2e:docker": "cypress run --e2e --browser electron --config-file cypress.config.docker.ts"
   },
   "devDependencies": {
-    "cypress": "^13.17.0",
+    "cypress": "^15.17.0",
     "typescript": "^5.9.3"
   }
 }
