@@ -3,8 +3,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
 
-const LAYOUT_PORT = process.env.NODE_ENV === 'production' 
-  ? 30091 
+const LAYOUT_PORT = process.env.NODE_ENV === 'production'
+  ? 30091
   : 4000
 
 // eslint-disable-next-line import/no-default-export

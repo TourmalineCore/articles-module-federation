@@ -1,6 +1,6 @@
 export function DashboardPage() {
   return (
-    <div>
+    <div data-cy="dashboard-page">
       <h1>Service B</h1>
       <h2>Dashboard</h2>
     </div>
