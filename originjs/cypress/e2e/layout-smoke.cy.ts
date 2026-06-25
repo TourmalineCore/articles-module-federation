@@ -6,6 +6,8 @@ describe(`Layout Smoke`, () => {
   `, () => {
     cy.visit(`/host-a/`)
 
+    // Check sidebar links exist
+
     cy
     .getByData(`sidebar`)
     .should(`exist`)
@@ -26,6 +28,8 @@ describe(`Layout Smoke`, () => {
     .getByData(`nav-link-reports`)
     .should(`exist`)
 
+    // Check navigation between pages
+    
     cy
     .getByData(`nav-link-about`)
     .click()
@@ -41,6 +45,8 @@ describe(`Layout Smoke`, () => {
     cy
     .getByData(`home-page`)
     .should(`exist`)
+
+    // TODO: add env to implement transition between applications
 
     // cy
     // .getByData(`nav-link-dashboard`)
