@@ -27,7 +27,6 @@ jobs:
         working-directory: ${{ inputs.working-directory }}
         run: |
           docker compose up -d
-          docker compose ps
 
       - name: Cypress run e2e tests
         uses: cypress-io/github-action@v6
@@ -37,8 +36,3 @@ jobs:
           browser: chrome
           config-file: cypress.config.same-host.ts
           install: false
-
-      - name: Stop Docker Compose
-        if: always()
-        working-directory: ${{ inputs.working-directory }}
-        run: docker compose down
