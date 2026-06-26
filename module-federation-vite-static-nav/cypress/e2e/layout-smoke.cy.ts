@@ -29,7 +29,7 @@ describe(`Layout Smoke`, () => {
     .should(`exist`)
 
     // Check navigation between pages
-    
+
     cy
     .getByData(`nav-link-about`)
     .click()
