@@ -1,0 +1,38 @@
+name: Reusable Cypress E2E
+
+on:
+  workflow_call:
+    inputs:
+      working-directory:
+        required: true
+        type: string
+
+jobs:
+  cypress-e2e:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install Cypress dependencies
+        working-directory: ${{ inputs.working-directory }}
+        run: npm ci
+
+      - name: Start Docker Compose
+        working-directory: ${{ inputs.working-directory }}
+        run: |
+          docker compose up -d
+
+      - name: Cypress run e2e tests
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: ${{ inputs.working-directory }}
+          wait-on: "http://localhost:30091/host-a/"
+          browser: chrome
+          config-file: cypress.config.same-host.ts
+          install: false

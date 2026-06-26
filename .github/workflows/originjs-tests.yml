@@ -1,0 +1,35 @@
+name: Originjs Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'originjs/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        app: [layout, host-a, host-b]
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        working-directory: originjs/${{ matrix.app }}
+        run: npm ci
+
+      - name: Lint
+        working-directory: originjs/${{ matrix.app }}
+        run: npm run lint
+
+  cypress-e2e:
+    uses: ./.github/workflows/.reusable-cypress-e2e.yml
+    with:
+      working-directory: originjs
