@@ -16,10 +16,18 @@
     30091
   ],
   "portsAttributes": {
-    "4000": { "label": "layout" },
-    "4001": { "label": "host-a" },
-    "4002": { "label": "host-b" },
-    "30091": { "label": "nginx proxy" }
+    "4000": {
+      "label": "layout"
+    },
+    "4001": {
+      "label": "host-a"
+    },
+    "4002": {
+      "label": "host-b"
+    },
+    "30091": {
+      "label": "nginx proxy"
+    }
   },
   "remoteEnv": {
     "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
