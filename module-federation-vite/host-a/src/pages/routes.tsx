@@ -1,7 +1,6 @@
 import { HomePage } from './Home'
 import { AboutPage } from './About'
-
-const BASE = `/host-a`
+import { BASE } from '../nav'
 
 export const appRoutes = [
   {

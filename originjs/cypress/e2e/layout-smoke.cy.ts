@@ -9,59 +9,57 @@ describe(`Layout Smoke`, () => {
     // Check sidebar links exist
 
     cy
-    .getByData(`sidebar`)
-    .should(`exist`)
+      .getByData(`sidebar`)
+      .should(`exist`)
 
     cy
-    .getByData(`nav-link-home`)
-    .should(`exist`)
+      .getByData(`nav-link-home`)
+      .should(`exist`)
 
     cy
-    .getByData(`nav-link-about`)
-    .should(`exist`)
+      .getByData(`nav-link-about`)
+      .should(`exist`)
 
     cy
-    .getByData(`nav-link-dashboard`)
-    .should(`exist`)
+      .getByData(`nav-link-dashboard`)
+      .should(`exist`)
 
     cy
-    .getByData(`nav-link-reports`)
-    .should(`exist`)
+      .getByData(`nav-link-reports`)
+      .should(`exist`)
 
     // Check navigation between pages
 
     cy
-    .getByData(`nav-link-about`)
-    .click()
+      .getByData(`nav-link-about`)
+      .click()
 
     cy
-    .getByData(`about-page`)
-    .should(`exist`)
+      .getByData(`about-page`)
+      .should(`exist`)
 
     cy
-    .getByData(`nav-link-home`)
-    .click()
+      .getByData(`nav-link-home`)
+      .click()
 
     cy
-    .getByData(`home-page`)
-    .should(`exist`)
+      .getByData(`home-page`)
+      .should(`exist`)
 
-    // TODO: add env to implement transition between applications
+    cy
+      .getByData(`nav-link-dashboard`)
+      .click()
 
-    // cy
-    // .getByData(`nav-link-dashboard`)
-    // .click()
+    cy
+      .getByData(`dashboard-page`)
+      .should(`exist`)
 
-    // cy
-    // .getByData(`dashboard-page`)
-    // .should(`exist`)
+    cy
+      .getByData(`nav-link-reports`)
+      .click()
 
-    // cy
-    // .getByData(`nav-link-reports`)
-    // .click()
-
-    // cy
-    // .getByData(`reports-page`)
-    // .should(`exist`)
+    cy
+      .getByData(`reports-page`)
+      .should(`exist`)
   })
 })

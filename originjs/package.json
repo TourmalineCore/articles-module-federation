@@ -2,13 +2,13 @@
   "name": "originjs",
   "private": true,
   "scripts": {
-    "cypress:open": "cypress open",
     "cypress:open:e2e": "cypress open --e2e --browser electron",
     "cypress:run:e2e": "cypress run --e2e --browser electron",
-    "cypress:open:e2e:docker": "cypress open --e2e --browser electron --config-file cypress.config.docker.ts",
-    "cypress:run:e2e:docker": "cypress run --e2e --browser electron --config-file cypress.config.docker.ts"
+    "cypress:open:e2e:same-host": "cypress open --e2e --browser electron --config-file cypress.config.same-host.ts",
+    "cypress:run:e2e:same-host": "cypress run --e2e --browser electron --config-file cypress.config.same-host.ts"
   },
   "devDependencies": {
+    "@types/node": "^26.0.1",
     "cypress": "^15.17.0",
     "typescript": "^5.9.3"
   }
