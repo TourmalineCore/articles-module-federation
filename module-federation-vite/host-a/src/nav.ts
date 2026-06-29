@@ -1,12 +1,13 @@
-export const base = `/host-a`
-export const origin = import.meta.env.DEV ? `http://localhost:4001` : ``
+export const BASE = `/host-a`
+export const origin = import.meta.env.VITE_ORIGIN
+
 export const navItems = [
   {
     label: `Home`,
-    path: `/host-a/`,
+    path: `${BASE}/`,
   },
   {
     label: `About`,
-    path: `/host-a/about`,
+    path: `${BASE}/about`,
   },
 ]

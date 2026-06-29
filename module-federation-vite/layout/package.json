@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:same-host": "tsc && vite build --mode same-host",
     "docker:build": "docker build -t layout .",
     "docker:run": "docker run -p 4450:80 layout",
     "preview": "vite preview --port 4000",
