@@ -2,6 +2,8 @@
 
 Three example projects demonstrating Module Federation with Vite. The projects differ in plugin and navigation approach but share the same overall structure.
 
+> **Note:** These are simplified prototype projects for article purposes only — not production-ready.
+
 **host-a** — Service A with Home and About pages. Loads the `Layout` component from the **layout** remote and passes its routes to it.
 
 **host-b** — Service B with Dashboard and Reports pages. Loads the `Layout` component from the **layout** remote and passes its routes to it.
