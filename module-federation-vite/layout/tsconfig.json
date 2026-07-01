@@ -9,7 +9,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "strict": true
+    "strict": true,
+    "ignoreDeprecations": "5.0",
+    "paths": {
+      "*": ["./@mf-types/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "@mf-types"]
 }
