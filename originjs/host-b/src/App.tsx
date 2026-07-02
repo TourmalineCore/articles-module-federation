@@ -1,5 +1,5 @@
 import { appRoutes } from './pages/routes'
-import { Layout } from 'layout/layout'
+import Layout from 'layout/layout'
 
 // eslint-disable-next-line import/no-default-export
 export default function App() {
