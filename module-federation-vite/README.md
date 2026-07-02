@@ -1,6 +1,6 @@
 # module-federation-vite
 
-Uses the `@module-federation/vite` plugin. Navigation is dynamic: host-a and host-b export their nav items via Module Federation, and layout loads them at runtime. When a new host is added, the navigation updates automatically — without rebuilding layout.
+Uses the `@module-federation/vite` plugin. Navigation is dynamic: host-a and host-b export their nav items via Module Federation, and layout loads them at runtime. When nav items of an existing host change, layout picks them up on the next page load — without rebuilding. Adding a new host requires a change in layout: register it in `remotes` in vite.config.ts and in `useHostNav.ts`.
 
 ## Prerequisites
 
